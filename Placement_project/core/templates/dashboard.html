@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h2>Welcome {{ request.user.username }}</h2>
+
+{% if student %}
+    <p><strong>Branch:</strong> {{ student.branch }}</p>
+    <p><strong>CGPA:</strong> {{ student.cgpa }}</p>
+    <p><strong>Skills:</strong> {{ student.skills }}</p>
+    <p><strong>Backlogs:</strong> {{ student.backlog }}</p>
+
+    <h3>Your Placement Category:</h3>
+    <h2 style="color:green;">{{ category }}</h2>
+
+{% else %}
+    <p>You have not created a profile yet.</p>
+    <a href="/profile/">Create Profile</a>
+{% endif %}
+
+<br><br>
+<a href="/logout/">Logout</a>
+
+</body>
+</html>
